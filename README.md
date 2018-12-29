@@ -1,7 +1,8 @@
-# eclipse-photon-vnc-docker
+# Eclipse Photon VNC/noVNC dokcer 
+
 [![](https://images.microbadger.com/badges/image/openkbs/eclipse-photon-vnc-docker.svg)](https://microbadger.com/images/openkbs/eclipse-photon-vnc-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/eclipse-photon-vnc-docker.svg)](https://microbadger.com/images/openkbs/eclipse-photon-vnc-docker "Get your own version badge on microbadger.com")
 
-* Eclipse-Photon + Java 8 JDK + Maven 3.5 + Python 3.5 + Gradle + X11 (display GUI)
+* Eclipse-Photon + Java 8 JDK + Maven 3.5 + Python 3.5 + Gradle + VNC/noVNC (Desktop GUI)
 
 # NOTE: This docker default is providing latest Eclipse Photon instead of Oxygen and you can change it to build other versions!!!
 
@@ -16,7 +17,7 @@ This image contains [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase
   Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 * Apache Maven 3.5.3
 * Python 3.5.2
-* X11 display desktop
+* VNC/noVNC (Desktop GUI)
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy 
 
 # Run (recommended for easy-start)
@@ -35,7 +36,7 @@ If you want to build older Eclipse like "oxygen", you can following instruction 
 
 # Build (Older Eclipse, e.g. Oxygen)
 Two ways (at least) to build:
-### Way-1 (**Recommended**):
+## **Recommended**:
 If you use command line "'**./build.sh**'", you can modify "'**./.env**' (old filename ./docker.env)" file and then, run "./build.sh" to build image
 ```
 ## -- Eclipse versions: photon, oxygen, etc.: -- ##
@@ -47,18 +48,7 @@ Then,
 ```
 ./build/sh
 ```
-### Way-2: 
-Modify the line in '**./Dockefile**' as below if you use '**docker-compose**' or Openshift CI/CD. That is, you are not using command line '**./build.sh**' to build container image.
-```
-## -- Eclipse versions: photon, oxygen, etc.: -- ##
-ENV ECLIPSE_VERSION=${ECLIPSE_VERSION:-photon}
-or
-ENV ECLIPSE_VERSION=${ECLIPSE_VERSION:-oxygen}
-```
-Then, 
-```
-docker-compose up -d 
-```
+
 # Configurations (Optional)
 If you run "./run.sh" instead of "docker-compose up", you don't have to do anything as below.
 
@@ -69,16 +59,7 @@ $HOME/data_docker/eclipse-photon-vnc-docker/workspace
 ```
 The above configuration will ensure all your projects created in the container's "/workspace" being "persistent" in your local folder, "$HOME/data_docker/eclipse-photon-vnc-docker/workspace", for your repetitive restart docker container.
 
-### Create Customized Volume Mapping for "docker-compose"
-You can create your own customzied host file mapping, e.g.
-```
-mkdir -p <my_host_directory>/.eclipse 
-mkdir -p <my_host_directory>/eclipse-workspace
-```
-Then, run docker-comp
-```
-docker-compose up -d
-```
+
 # Distributed Storage
 This project provides simple host volumes. For using more advanced storage solutions, there are a few distributed cluster storage options available, e.g., Lustre (popular in HPC), GlusterFS, Ceph, etc.
 * [Dockerfiles (CentOS, Fedora, Red Hat) for GlusterFS ](https://github.com/gluster/gluster-containers)
@@ -106,17 +87,4 @@ This project provides simple host volumes. For using more advanced storage solut
 * [Deploying Teiid VDB](http://teiid.github.io/teiid-documents/master/content/admin/Deploying_VDBs.html)
 * [JBoss Tools Integration Stack 4.6.0.Final](https://tools.jboss.org/downloads/jbosstools_is/photon/4.6.0.Final.html)
 
-# Display X11 Issue
 
-More resource in X11 display of Eclipse on your host machine's OS, please see
-* [X11 Display problem](https://askubuntu.com/questions/871092/failed-to-connect-to-mir-failed-to-connect-to-server-socket-no-such-file-or-di)
-* [X11 Display with Xhost](http://www.ethicalhackx.com/fix-gtk-warning-cannot-open-display/)
-
-# Other possible Issues
-You might see the warning message or something similar in the launching xterm console like below, you can just ignore it. I googled around and some blogs just suggested to ignore since the IDE is still functional ok.
-```
-** (eclipse:1): WARNING **: Couldn't connect to accessibility bus: Failed to connect to socket /tmp/dbus-wrKH8o5rny: Connection refused
-
-** (java:7): WARNING **: Couldn't connect to accessibility bus: Failed to connect to socket /tmp/dbus-wrKH8o5rny: Connection refused
-
-```
