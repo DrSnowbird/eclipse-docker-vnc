@@ -17,13 +17,55 @@ This image contains [Oracle JDK 8](http://www.oracle.com/technetwork/java/javase
   Java HotSpot(TM) 64-Bit Server VM (build 25.191-b12, mixed mode)
 * Apache Maven 3.5.3
 * Python 3.5.2
-* VNC/noVNC (Desktop GUI)
+* VNC / noVNC: for VNC Client/Viwer / Browser-based VNC (noVNC)
 * Other tools: git wget unzip vim python python-setuptools python-dev python-numpy 
 
 # Run (recommended for easy-start)
 Image is pulling from openkbs/eclipse-photon-vnc-docker
 ```
 ./run.sh
+```
+## Connect to VNC Viewer/Client or noVNC (Browser-based VNC)
+* connect via VNC viewer localhost:5901, default password: vncpassword
+* connect via noVNC HTML5 full client: http://localhost:6901/vnc.html, default password: vncpassword
+* connect via noVNC HTML5 lite client: http://localhost:6901/?password=vncpassword
+
+Once it is up, the default password is "vncpassword" to access with your web browser:
+```
+http://<ip_address>:6901/vnc.html,
+e.g.
+=> Standalone Docker: http://localhost:6901/vnc.html
+=> Openshift Container Platform: http://<route-from-openshift>/vnc.html
+=> similarly for Kubernetes Container Platform: (similar to the Openshift above!)
+```
+# Run - Override VNC environment variables 
+The following VNC environment variables can be overwritten at the docker run phase to customize your desktop environment inside the container. You can change those variables using configurations CLI or Web-GUI with OpenShift, Kubernetes, DC/OS, etc.
+```
+VNC_COL_DEPTH, default is 24 , e.g., change to 16,
+    -e VNC_COL_DEPTH=16
+VNC_RESOLUTION, default: 1920x1080 , e.g., change to 1280x1024
+    -e VNC_RESOLUTION=1280x1024
+VNC_PW, default: vncpassword , e.g., change to MySpecial!(Password%)
+    -e VNC_PW=MySpecial!(Password%)
+```
+# Screen (Desktop) Resolution
+Two ways to change Screen resolutions.
+
+## 1.) Modify ./run.sh file
+```
+#VNC_RESOLUTION="1280x1024"
+VNC_RESOLUTION="1920x1280"
+```
+
+## 2.) Customize Openshift or Kubernetes container run envionrment
+```
+Set up, say, VNC_RESOLUTION with value 1920x1280
+```
+
+# Base the image to build add-on components
+
+```Dockerfile
+FROM openkbs/jdk-mvn-py3-vnc
 ```
 
 # Build
