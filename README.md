@@ -54,7 +54,7 @@ Two ways to change Screen resolutions.
 ## 1.) Modify ./run.sh file
 ```
 #VNC_RESOLUTION="1280x1024"
-VNC_RESOLUTION="1920x1280"
+VNC_RESOLUTION="1920x1080"
 ```
 
 ## 2.) Customize Openshift or Kubernetes container run envionrment
