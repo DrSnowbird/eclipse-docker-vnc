@@ -109,16 +109,20 @@ This project provides simple host volumes. For using more advanced storage solut
 * [Two Days of Pain or How I Deployed GlusterFS Cluster to Kubernetes](https://blog.lwolf.org/post/how-i-deployed-glusterfs-cluster-to-kubernetes/)
 # See Also - Other docker-based IDE
 * [openkbs/docker-atom-editor](https://hub.docker.com/r/openkbs/docker-atom-editor/)
+* [openkbs/eclipse-photon-docker](https://hub.docker.com/r/openkbs/eclipse-photon-docker/)
 * [openkbs/eclipse-photon-vnc-docker](https://hub.docker.com/r/openkbs/eclipse-photon-vnc-docker/)
 * [openkbs/eclipse-oxygen-docker](https://hub.docker.com/r/openkbs/eclipse-oxygen-docker/)
 * [openkbs/intellj-docker](https://hub.docker.com/r/openkbs/intellij-docker/)
-* [openkbs/netbeans9-docker](https://hub.docker.com/r/openkbs/netbeans9-docker/)
+* [openkbs/intellj-vnc-docker](https://hub.docker.com/r/openkbs/intellij-vnc-docker/)
+* [openkbs/knime-vnc-docker](https://hub.docker.com/r/openkbs/knime-vnc-docker/)
+* [openkbs/netbeans10-docker](https://hub.docker.com/r/openkbs/netbeans10-docker/)
 * [openkbs/netbeans](https://hub.docker.com/r/openkbs/netbeans/)
 * [openkbs/papyrus-sysml-docker](https://hub.docker.com/r/openkbs/papyrus-sysml-docker/)
 * [openkbs/pycharm-docker](https://hub.docker.com/r/openkbs/pycharm-docker/)
 * [openkbs/scala-ide-docker](https://hub.docker.com/r/openkbs/scala-ide-docker/)
 * [openkbs/sublime-docker](https://hub.docker.com/r/openkbs/sublime-docker/)
 * [openkbs/webstorm-docker](https://hub.docker.com/r/openkbs/webstorm-docker/)
+* [openkbs/webstorm-vnc-docker](https://hub.docker.com/r/openkbs/webstorm-vnc-docker/)
 
 # Resources - JBoss
 * [JBoss Tools Integration Stacks 4.6.0.Final](https://tools.jboss.org/downloads/jbosstools_is/photon/4.6.0.Final.html#update_site)
