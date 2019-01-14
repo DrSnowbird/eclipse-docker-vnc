@@ -1,4 +1,4 @@
-# Eclipse Photon VNC/noVNC dokcer 
+# Eclipse Photon IDE dokcer container + Maven 3.6 + Python 3.5 + PIP3 18.1 + npm 3.5.2 + nodejs v4.2.6 + Gradle 5.1 + VNC/noVNC 
 
 [![](https://images.microbadger.com/badges/image/openkbs/eclipse-photon-vnc-docker.svg)](https://microbadger.com/images/openkbs/eclipse-photon-vnc-docker "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/eclipse-photon-vnc-docker.svg)](https://microbadger.com/images/openkbs/eclipse-photon-vnc-docker "Get your own version badge on microbadger.com")
 
