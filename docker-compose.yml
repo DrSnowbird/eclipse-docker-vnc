@@ -1,0 +1,22 @@
+version: '3' 
+services:
+  eclipse-photon-vnc-docker:
+    image: openkbs/eclipse-photon-vnc-docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eclipse-photon-vnc-docker
+    environment:
+      - USER_ID=${USER_ID:-1000}
+      - GROUP_ID=${GROUP_ID:-1000}
+    env_file:
+      - ./.env
+    ports:
+      - 5901:5901
+      - 6901:6901
+    volumes:
+      - ./eclipse-workspace:/home/developer/eclipse-workspace
+      - ./.eclipse:/home/developer/.eclipse
+      - ./data:/home/developer/data
+      - ./workspace:/home/developer/workspace
+      - ./.java:/home/developer/.java
