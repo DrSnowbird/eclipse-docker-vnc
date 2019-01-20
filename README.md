@@ -27,6 +27,13 @@ Image is pulling from openkbs/eclipse-photon-vnc-docker
 ```
 ./run.sh
 ```
+
+## Mobile devices and Desktop PC supported / tested:
+* SmartPhones: tested ok! iPhone5 Safari works though phone screen size being too small vs the desired HD 1920x1080. It should work across all the smartphones with HTML5-capable brwosers. Hence, to access with small phone screen, run with VNC_RESOLUTION=800x600 (or adjust it to fit your phone's screen size)
+* Tablets: tested ok! Amazon Fire with noVNC works!. It should work across all the tablets with HTML5-capable brwosers.
+![Eclipse Photon on Amazon Fire tablet](doc/knime-vnc-docker-on-Amazon-Fire-tablet.jpeg).
+* Desktop PC or MacBook: tested ok! It should work across all PCs Desktop with HTML5-capable brwosers. ![Eclipse Photon on Desktop PC Browser](doc/eclipse-photon-vnc-docker-on-Desktop-PC-Browser.png)
+
 ## Connect to VNC Viewer/Client or noVNC (Browser-based VNC)
 * connect via VNC viewer localhost:5901, default password: vncpassword
 * connect via noVNC HTML5 full client: http://localhost:6901/vnc.html, default password: vncpassword
@@ -45,7 +52,7 @@ The following VNC environment variables can be overwritten at the docker run pha
 ```
 VNC_COL_DEPTH, default is 24 , e.g., change to 16,
     -e VNC_COL_DEPTH=16
-VNC_RESOLUTION, default: 1920x1080 , e.g., change to 1280x1024
+VNC_RESOLUTION, default: 1920x1080 , e.g., change to 1024x800
     -e VNC_RESOLUTION=1280x1024
 VNC_PW, default: vncpassword , e.g., change to MySpecial!(Password%)
     -e VNC_PW=MySpecial!(Password%)
