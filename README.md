@@ -31,7 +31,7 @@ Image is pulling from openkbs/eclipse-photon-vnc-docker
 ## Mobile devices and Desktop PC supported / tested:
 * SmartPhones: tested ok! iPhone5 Safari works though phone screen size being too small vs the desired HD 1920x1080. It should work across all the smartphones with HTML5-capable brwosers. Hence, to access with small phone screen, run with VNC_RESOLUTION=800x600 (or adjust it to fit your phone's screen size)
 * Tablets: tested ok! Amazon Fire with noVNC works!. It should work across all the tablets with HTML5-capable brwosers.
-![Eclipse Photon on Amazon Fire tablet](doc/knime-vnc-docker-on-Amazon-Fire-tablet.jpeg).
+![Eclipse Photon on Amazon Fire tablet](doc/eclipse-photon-docker-on-Amazon-Fire-tablet.jpeg).
 * Desktop PC or MacBook: tested ok! It should work across all PCs Desktop with HTML5-capable brwosers. ![Eclipse Photon on Desktop PC Browser](doc/eclipse-photon-vnc-docker-on-Desktop-PC-Browser.png)
 
 ## Connect to VNC Viewer/Client or noVNC (Browser-based VNC)
@@ -62,8 +62,8 @@ Two ways to change Screen resolutions.
 
 ## 1.) Modify ./run.sh file
 ```
-#VNC_RESOLUTION="1280x1024"
-VNC_RESOLUTION="1920x1080"
+#VNC_RESOLUTION=1280x1024
+VNC_RESOLUTION=1920x1080
 ```
 
 ## 2.) Customize Openshift or Kubernetes container run envionrment
