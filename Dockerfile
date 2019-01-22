@@ -86,13 +86,9 @@ USER ${USER}
 
 ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 
-CMD ["--wait"]
-
 ##################################
 #### ECLIPSE ####
 ##################################
 WORKDIR ${WORKSPACE}
-
-USER ${USER}
 
 CMD ["/opt/eclipse/eclipse"]
