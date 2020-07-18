@@ -1,11 +1,11 @@
 version: '3' 
 services:
-  eclipse-photon-vnc-docker:
-    image: openkbs/eclipse-photon-vnc-docker
+  eclipse-docker-vnc:
+    image: openkbs/eclipse-docker-vnc
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: eclipse-photon-vnc-docker
+    container_name: eclipse-docker-vnc
     environment:
       - USER_ID=${USER_ID:-1000}
       - GROUP_ID=${GROUP_ID:-1000}
