@@ -1,4 +1,4 @@
-# Eclipse Photon IDE Docker Container + Java 8 (1.8.0_202) JDK + Maven 3.6 + Python 3.5 + PIP3 19 + + npm 6.7 + nodejs v11 + Gradle 5.1 + VNC/noVNC 
+# Eclipse Photon IDE Docker Container + Java 8 OpenJDK + Maven 3.6 + Python 3.6 + PIP3 20 + + npm 6 + nodejs v13 + Gradle 6 + VNC/noVNC 
 
 [![](https://images.microbadger.com/badges/image/openkbs/eclipse-docker-vnc.svg)](https://microbadger.com/images/openkbs/eclipse-docker-vnc "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/openkbs/eclipse-docker-vnc.svg)](https://microbadger.com/images/openkbs/eclipse-docker-vnc "Get your own version badge on microbadger.com")
 
