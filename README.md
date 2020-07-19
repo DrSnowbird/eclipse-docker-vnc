@@ -7,7 +7,8 @@
 # Components
 * Eclipse '2020-06' JEE version (you can change if by change Dockerfile)
 * Base Components (e.g., Maven, Java, NodeJS, etc.)
-  * See [openkbs/jdk-mvn-py3](https://github.com/DrSnowbird/jdk-mvn-py3/blob/master/README.md#Components)
+  * See [openkbs/jdk-mvn-py3 - Components](https://github.com/DrSnowbird/jdk-mvn-py3/blob/master/README.md#Components)
+  * See [openkbs/jdk-mvn-py3 - Releases Information](https://github.com/DrSnowbird/jdk-mvn-py3/blob/master/README.md#Releases-information)
 
 # Run (recommended for easy-start)
 Image is pulling from openkbs/eclipse-docker-vnc
@@ -66,7 +67,7 @@ FROM openkbs/jdk-mvn-py3-vnc
 
 # Build
 You can build your own image locally.
-Note that the default build docker is "photon" version. 
+Note that the default build docker is "latest" version. 
 If you want to build older Eclipse like "oxygen", you can following instruction in next section
 ```
 ./build.sh
@@ -84,7 +85,7 @@ ECLIPSE_VERSION=oxygen
 ```
 Then, 
 ```
-./build/sh
+./build.sh
 ```
 
 # Configurations (Optional)
