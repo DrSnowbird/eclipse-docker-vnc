@@ -319,6 +319,8 @@ function generateVolumeMapping() {
                         VOLUME_MAP="${VOLUME_MAP} -v `pwd`/${left}:${DOCKER_VOLUME_DIR}/${right}"
                     fi
                     mkdir -p `pwd`/${left}
+		    #sudo chown -R $USER:$USER .eclipse eclipse-workspace data .java workspace
+		    sudo chown -R $USER:$USER `pwd`/${left}
                     if [ $DEBUG -gt 0 ]; then ls -al `pwd`/${left}; fi
                 else
                     ## No "./data" on the left
@@ -334,6 +336,7 @@ function generateVolumeMapping() {
                             VOLUME_MAP="${VOLUME_MAP} -v ${left}:${DOCKER_VOLUME_DIR}/${right}"
                         fi
                         mkdir -p ${LOCAL_VOLUME_DIR}/${left}
+		        sudo chown -R $USER:$USER `pwd`/${left}
                         if [ $DEBUG -gt 0 ]; then ls -al ${LOCAL_VOLUME_DIR}/${left}; fi
                     else
                         ## No pattern like "/data" on the left
@@ -347,6 +350,7 @@ function generateVolumeMapping() {
                             VOLUME_MAP="${VOLUME_MAP} -v ${LOCAL_VOLUME_DIR}/${left}:${DOCKER_VOLUME_DIR}/${right}"
                         fi
                         mkdir -p ${LOCAL_VOLUME_DIR}/${left}
+		        sudo chown -R $USER:$USER `pwd`/${left}
                         if [ $DEBUG -gt 0 ]; then ls -al ${LOCAL_VOLUME_DIR}/${left}; fi
                     fi
                 fi
